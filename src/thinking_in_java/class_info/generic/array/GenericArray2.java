@@ -1,7 +1,10 @@
 package thinking_in_java.class_info.generic.array;
 
 import java.util.ArrayList;
-import java.util.List;
+
+import thinking_in_java.class_info.generic.contravariance.Apple;
+import thinking_in_java.class_info.generic.contravariance.Fruit;
+import thinking_in_java.class_info.generic.contravariance.Jonathan;
 
 public class GenericArray2<T> {
 	private Object[] array;
@@ -27,15 +30,6 @@ public class GenericArray2<T> {
 	public static void main(String[] args) {
 		Number[] ls = new Integer[10];
 		//Integer[] is = (Integer[]) new Number[11];
-		
-		ArrayList<? extends Number> list = new ArrayList<Integer>();
-		//list.add(1f);
-		//list.get(0);
-		
-		
-		ArrayList<? super Integer> list1 = new ArrayList<Number>();
-		list1.add(1);
-		Integer ref = (Integer) list1.get(0);
 		
 		GenericArray2<Integer> gai = new GenericArray2<Integer>(10);
 		gai.put(0, new Integer(1));
