@@ -35,7 +35,7 @@ public class Pair {
   }
   
   
-  public synchronized void checkState() {
+  public void checkState() {
     if (x != y)
       throw new PairValuesNotEqualException();
   }

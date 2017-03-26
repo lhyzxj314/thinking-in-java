@@ -16,7 +16,7 @@ abstract class PairManager {
   protected Pair pair = new Pair();
   private List<Pair> storage = Collections.synchronizedList(new ArrayList<Pair>());
 
-  // 显式锁方式
+  // 显式锁方式我
   public Pair getPair() {
     lock.lock();
     try {
