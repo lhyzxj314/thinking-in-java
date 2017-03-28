@@ -9,41 +9,33 @@ import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 abstract class PairManager {
-  
-  protected Lock lock = new ReentrantLock();
-  
-  AtomicInteger checkCounter = new AtomicInteger(0);
-  protected Pair pair = new Pair();
-  private List<Pair> storage = Collections.synchronizedList(new ArrayList<Pair>());
-
-  // 显式锁方式我
-  public Pair getPair() {
-    lock.lock();
-    try {
-      return new Pair(pair.getX(), pair.getY());
-    } finally {
-      lock.unlock();
-    }
-  }
-  
-  // synchronized版本
-  /*public synchronized Pair getPair() {
-    return new Pair(pair.getX(), pair.getY());
-  }*/
-
-  /**
-   * 模拟耗时操作
-   * @param p
-   */
-  protected void store(Pair p) {
-    storage.add(p);
-    try {
-      TimeUnit.MILLISECONDS.sleep(50);
-    } catch (InterruptedException e) {
-      e.printStackTrace();
-    }
-  }
-  
-  public abstract void increment();
-
+	protected Lock lock = new ReentrantLock();
+	AtomicInteger checkCounter = new AtomicInteger(0); 
+	private List<Pair> storage = Collections.synchronizedList(new ArrayList<Pair>());
+	
+	protected Pair pair = new Pair();
+	
+	// 显式锁
+	public Pair getPair() {
+		lock.lock();
+		try {
+			return new Pair(pair.getX(), pair.getY());
+		} finally {
+			lock.unlock();
+		}
+	}
+	
+	// synchronized方式
+	/*public synchronized Pair getPair() {
+		return new Pair(pair.getX(), pair.getY());
+	}*/
+	
+	public void store(Pair p) {
+		storage.add(p);
+		try {
+			TimeUnit.MILLISECONDS.sleep(50);
+		} catch (InterruptedException e) {}
+	}
+	
+	public abstract void increment();
 }

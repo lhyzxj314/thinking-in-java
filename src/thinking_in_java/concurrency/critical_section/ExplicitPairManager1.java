@@ -1,14 +1,16 @@
 package thinking_in_java.concurrency.critical_section;
 
-class PairManager2 extends PairManager {
+class ExplicitPairManager1 extends PairManager {
+	
 	@Override
 	public void increment() {
-		Pair temp;
-		synchronized(this) {
+		lock.lock();
+		try {
 			pair.incrementX();
 			pair.incrementY();
-			temp = getPair();
+			store(getPair());
+		} finally {
+			lock.unlock();
 		}
-		store(temp);
 	}
 }
