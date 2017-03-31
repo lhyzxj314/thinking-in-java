@@ -1,4 +1,4 @@
-package thinking_in_java.concurrency;
+package thinking_in_java.concurrency.interrupt;
 
 import java.io.InputStream;
 import java.net.ServerSocket;

@@ -1,4 +1,4 @@
-package thinking_in_java.concurrency;
+package thinking_in_java.concurrency.interrupt;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;
@@ -13,7 +13,8 @@ import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
 
 /*
- * interrupt一个阻塞的NIO channel 
+ * interrupt一个阻塞的NIO channel
+ *  
  * @author xiaojun
  * @version 1.0.0
  * @date 2017年3月28日
