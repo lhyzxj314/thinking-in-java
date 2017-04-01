@@ -1,4 +1,4 @@
-package thinking_in_java.concurrency.cooperation;
+package thinking_in_java.concurrency.cooperation.lib_component;
 
 import java.util.ArrayList;
 import java.util.List;

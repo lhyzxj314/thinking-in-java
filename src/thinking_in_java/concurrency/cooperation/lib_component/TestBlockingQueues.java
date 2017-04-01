@@ -1,4 +1,4 @@
-package thinking_in_java.concurrency.cooperation;
+package thinking_in_java.concurrency.cooperation.lib_component;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -7,6 +7,8 @@ import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.SynchronousQueue;
+
+import thinking_in_java.concurrency.cooperation.LiftOff;
 
 class LiftOffRunner implements Runnable {
 	private BlockingQueue<LiftOff> queue;

@@ -1,4 +1,4 @@
-package thinking_in_java.concurrency.cooperation;
+package thinking_in_java.concurrency.cooperation.lib_component;
 
 import java.util.Random;
 import java.util.concurrent.ExecutorService;
@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
 
-import thinking_in_java.concurrency.cooperation.Toast.Status;
+import thinking_in_java.concurrency.cooperation.lib_component.Toast.Status;
 
 /*
  * 测试BlockingQueue
